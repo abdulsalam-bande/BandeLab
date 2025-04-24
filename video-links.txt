@@ -1,0 +1,40 @@
+Transformer Decoder Layer
+nn.TransformerDecoderLayer - Overview : https://youtu.be/sjRM5aStRwI
+torch.nn.TransformerDecoderLayer - Part 2 - Embedding, First Multi-Head attention and Normalization : https://youtu.be/Kl0Z65zuoB0
+torch.nn.TransformerDecoderLayer - Part 3 -Multi-Head attention and Normalization : https://youtu.be/OKlGLOq-RJ0
+torch.nn.TransformerDecoderLayer - Part 4 - Multiple Linear Layers and Normalization : https://youtu.be/VAEN0Ug1GDo
+
+Transformer Encoder Layer
+torch.nn.TransformerEncoderLayer - Part 0 - Module Overview : https://youtu.be/oCWFyt2kWLg
+torch.nn.TransformerEncoderLayer - Part 1 - Transformer Embedding and Position Encoding Layer : https://youtu.be/aSx2uAytLFY
+torch.nn.TransformerEncoderLayer - Part 2 - Transformer Self Attention Layer : https://youtu.be/inucENbg8tw
+torch.nn.TransformerEncoderLayer - Part 3 - Transformer Layer Normalization : https://youtu.be/rC_F2KG53oE
+torch.nn.TransformerEncoderLayer - Part 4 - Transformer Encoder Fully Connected Layers : https://youtu.be/-MiPTwXg01M
+torch.nn.TransformerEncoderLayer - Part 5 - Transformer Encoder Second Layer Normalization : https://youtu.be/H0xtVtACWFU
+
+
+GPT Training
+GPT: A Technical Training Unveiled #1 - Introduction : https://youtu.be/Q4AEY2YG5OU
+GPT: A Technical Training Unveiled #2 - Tokenization : https://youtu.be/oz0FZhjiPx8
+GPT: A Technical Training Unveiled #3 -  Embedding and Positional Encoding : https://youtu.be/kZYT8SM3XUQ
+GPT: A Technical Training Unveiled #4 -  Masked Multihead Attention : https://youtu.be/X6HWCoKdVo8
+GPT: A Technical Training Unveiled #5 -  Feedforward, Add & Norm : https://youtu.be/T8hhdXqgSrc
+GPT: A Technical Training Unveiled #6 -  Block Two  of Transform Decoder : https://youtu.be/J7XgJXdQn5E
+GPT: A Technical Training Unveiled #7 -  Final Linear Layer and Softmax : https://youtu.be/PHwjc5-j8aQ
+
+Distributions
+torch.distributions.poisson.Poisson - Poisson Distribution Guided Synthetic  Data Generation : https://youtu.be/-OTB0PBT1ZQ
+
+Normalization Layers
+torch.nn.BatchNorm1d Explained : https://youtu.be/4gal2zIjm3M
+torch.nn.BatchNorm2d Explained : https://youtu.be/xV6bQkvJHwg
+torch.nn.LayerNorm Explained : https://youtu.be/MbJqGUetg7A
+
+Reinforcement Learning Part 1: Classical Foundations
+Reinforcement Learning: Introduction : https://youtu.be/g9uQ1O7rnNk
+Reinforcement Learning: The Decision Learning Problem : https://youtu.be/td8zAFOFge0
+Reinforcement Learning: Markov Chains : https://youtu.be/31csIsLisXE
+Reinforcement Learning: Markov Reward Process and Value Functions : https://youtu.be/QmRHXzJLyS8
+Reinforcement Learning: The Bellman Equation : https://youtu.be/0iqhEm7Ge50
+Reinforcement Learning: Markov Decision Processes (MDPs) and Policies : https://youtu.be/Nwlwh3DxpQk
+Reinforcement Learning: Optimal Policies and Optimal Value Functions : https://youtu.be/8oJfo-gfuVo

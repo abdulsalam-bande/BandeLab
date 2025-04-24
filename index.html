@@ -1,260 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BandeLab - AI & NLP Engineering</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About – BandeLab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet"/>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-body {
-  font-family: 'IBM Plex Mono', monospace;
-  margin: 0;
-  padding: 0;
-   color: #2F2D2BFF;
-  line-height: 1.8;
-  font-size: 1.25rem;
-  background-color: #f7f3ee;
-  position: relative;
-  z-index: 0;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-  background-repeat: repeat;
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: -1;
-}
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            margin: 0;
+            padding: 0;
+            color: #2F2D2BFF;
+            line-height: 1.8;
+            font-size: 1.25rem;
+            position: relative;
+            z-index: 0;
+            background-color: #f7f3ee; /* creamy, light paper tone */
+            background-repeat: repeat;
+            background-size: auto;
+        }
 
 
+        header {
+            background: #f7f3ee;
+            color: #1b1b1b;
+            padding: 0.6rem 1.2rem;
+            text-align: center;
+            border-bottom: 5px solid #1b210d;
+        }
 
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
 
-    header {
-      background: #f7f3ee; /* warm cream tone */
-      color: #1b1b1b;
-      padding: 0.6rem 1.2rem;
-      text-align: center;
-      border-bottom: 5px solid #1b210d;
-    }
+        nav {
+            margin-top: 1rem;
+        }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
+        nav a {
+            color: #333;
+            margin: 0 1.2rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
 
-    nav {
-      margin-top: 1rem;
-    }
+        nav a:hover {
+            color: #d64b2c;
+        }
 
-    nav a {
-      color: #333;
-      margin: 0 1.2rem;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
+        main {
+            padding: 4rem 1rem;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-    nav a:hover {
-      color: #d64b2c;
-    }
+        section {
+            margin-bottom: 3rem;
+        }
 
-    main {
-      padding: 4rem 1rem;
-      max-width: 1100px;
-      margin: auto;
-    }
+        h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+        }
 
-    section {
-      margin-bottom: 3rem;
-    }
+        .card-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
 
-    h2 {
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-      padding-left: 0;
-      border-left: none;
-    }
+        .card,
+        .card-wide {
+            background: #f7f3ee;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #2f2d2b;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
+        .card {
+            flex: 1;
+            min-width: 300px;
+        }
 
-    .gallery img {
-      width: 220px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 3px solid #1b210d;
-      transition: transform 0.3s ease;
-    }
+        .card-wide {
+            width: 100%;
+            margin-top: 2rem;
+        }
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
+        .card:hover,
+        .card-wide:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
 
-    .card-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
 
-    .card,
-    .card-wide {
-      background: #f7f3ee; /* warm cream tone */
-      padding: 2rem;
-      border-radius: 15px;
-      border: 2px solid #2f2d2b;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.07);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        footer {
+            background-color: #2f2d2b;
+            color: #f2e9de;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.95rem;
+            border-top: 8px solid #f2e9de;
+            font-family: monospace;
+        }
 
-    .card {
-      flex: 1;
-      min-width: 300px;
-    }
+        .footer-logo {
+            background-color: #f2e9de;
+            color: #2f2d2b;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
 
-    .card-wide {
-      width: 100%;
-      margin-top: 2rem;
-    }
+        a {
+            color: #388e3c;
+            text-decoration: none;
+        }
 
-    .card:hover,
-    .card-wide:hover {
-      transform: scale(1.02);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-    }
+        a:hover {
+            text-decoration: underline;
+        }
 
-    ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-    }
+        .scholar-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #388e3c;
+            color: #f7f3ee;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-    footer {
-      background-color: #ffffff;
-      color: #888;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.95rem;
-      border-top: 1px solid #e0e0e0;
-    }
-
-    a {
-      color: #388e3c;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+        .scholar-link:hover {
+            background-color: #2d6f30;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
-  <header>
+<header>
     <h1>BandeLab</h1>
     <nav>
-      <a href="#about">About</a>
-      <a href="#gallery">YouTube</a>
-      <a href="#research">Blog</a>
+        <a href="index.html">About</a>
+        <a href="youtube.html">YouTube</a>
+        <a href="berry.html">Mobile Application (Berry)</a>
+        <a href="blog.html">Blog</a>
     </nav>
-  </header>
+</header>
 
-  <main>
+<main>
     <section id="about">
-      <h2>About Me</h2>
-      <p>Hi, I'm <strong>Abdulsalam Bande</strong>, an experienced Software Developer and NLP Engineer specializing in AI-driven solutions, machine learning applications in bioinformatics, and healthcare innovations.</p>
-    </section>
+        <h2>Abdulsalam Bande</h2>
+        <p>
+            My research background is in applying Machine Learning (ML) to
+            healthcare and bioinformatics. I'm passionate about contributing to the journey of revolutionising
+            healthcare
+            access through ML. The recent breakthroughs in Natural Language Processing—especially generative models—have
+            shown immense potential to accelerate drug discovery and design.
 
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="https://via.placeholder.com/220x150" alt="Placeholder">
-        <img src="https://via.placeholder.com/220x150" alt="Placeholder">
-        <img src="https://via.placeholder.com/220x150" alt="Placeholder">
-      </div>
+            Alongside my research, I work as a <strong>Software Developer at SOCRadar</strong>, where I develop
+            intelligent
+            systems in the field of cybersecurity to tackle real-world threats. I'm also optimistic about the future
+            intersection of Reinforcement Learning and Quantum Computing and the opportunities it could unlock.
+        </p>
+        <a href="https://drive.google.com/file/d/1cCD4qCeIcoW6vcOhdDP8HW3MshFIcaDJ/view?usp=share_link" target="_blank"
+           class="scholar-link">View Resume</a>
+        <br>
+        <a href="https://scholar.google.com/citations?user=OlrA3O8AAAAJ&hl=en&authuser=1" target="_blank"
+           class="scholar-link">View Google Scholar Profile</a>
+
     </section>
 
     <section id="research">
-      <div class="card-row">
-        <div class="card">
-          <h2>Research Questions</h2>
-          <ul>
-            <li>How can LLMs improve patient diagnosis?</li>
-            <li>What biases exist in medical datasets?</li>
-            <li>How can AI support low-resource settings?</li>
-          </ul>
+        <div class="card-row">
+            <div class="card">
+                <h2>Core Research Questions</h2>
+                <ul>
+                    <li>How can LLMs assist in medical diagnosis and awareness?</li>
+                    <li>How can AI methods accelerate drug discovery?</li>
+                    <li>What design choices make AI effective in low-resource settings?</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>Research Interests</h2>
+                <ul>
+                    <li>Natural Language Processing</li>
+                    <li>Reinforcement Learning</li>
+                    <li>Machine Learning for Healthcare</li>
+                    <li>Bioinformatics & Drug Discovery</li>
+                    <li>Quantum Computing (Exploratory)</li>
+                </ul>
+            </div>
         </div>
-        <div class="card">
-          <h2>Research Interests</h2>
-          <ul>
-            <li>Natural Language Processing</li>
-            <li>Bioinformatics</li>
-            <li>Healthcare and AI</li>
-          </ul>
+    </section>
+
+
+    <section id="projects">
+        <div class="card-wide">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Berry:</strong> Mobile app that provides personalized AI health recommendations in
+                    low-resource regions.
+                </li>
+                <li><strong>YouTube Channel:</strong> <a href="youtube.html">mlwithpytorch</a> — Tutorials on PyTorch
+                    neural network modules.
+                </li>
+                <li><strong>Depth Estimation Research:</strong> PyTorch implementation of depth map prediction models.
+                </li>
+            </ul>
         </div>
-      </div>
     </section>
 
     <section id="publications">
-      <div class="card-wide">
-        <h2>Publications</h2>
-        <ul>
-          <li>Bande, A. (2024). <em>Exploiting LLMs for Healthcare in Low-Resource Settings</em>. Preprint.</li>
-          <li>Bande, A. (2023). <em>Neural Representations in Molecular Docking</em>. Bioinformatics Journal.</li>
-        </ul>
-      </div>
+        <div class="card-wide">
+            <h2>Publications</h2>
+            <ul>
+                <li>
+                    Bande, A. & Baday, S. (2024). <em>Accelerating molecular docking using machine learning methods</em>.
+                    <br>
+                    Published in <em>Journal of Molecular Informatics</em>.
+                    <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1002/minf.202300167" target="_blank">View
+                        Publication</a>
+                </li>
+                <li>
+                    Bande, A. & Baday, S. (2024). <em>Exploiting Cross-Domain Knowledge of Large Language Models for
+                    Robust Applications</em>. <br>Presented at Eurasia NLP 2024. In Review.
+                </li>
+                <li>
+                    Bande, A. & Baday, S. (2024). <em>Leveraging LLMs to Bridge Healthcare Gaps in Underdeveloped
+                    Countries</em>. <br>Best Paper Presenter, ICHSM 2024. In Review.
+                </li>
+            </ul>
+        </div>
     </section>
+
 
     <section id="conferences">
-      <div class="card-wide">
-        <h2>Conferences</h2>
-        <ul>
-          <li>ICHSM 2024 (Online). Presented "Berry: Mobile AI Health Assistant"</li>
-          <li>NLP Summit 2023. Poster: "Bias in Medical NLP Models"</li>
-        </ul>
-      </div>
+        <div class="card-wide">
+            <h2>Conferences & Talks</h2>
+            <ul>
+                <li><strong>7th International Conference on Healthcare Service Management (ICHSM 2024, Istanbul –
+                    Online):</strong>
+                    Presented <em>"Leveraging Large Language Models to Bridge Healthcare Gaps in Underdeveloped
+                        Countries"</em>.
+                    Awarded Best Paper Presenter.
+                </li>
+                <li><strong>Eurasia NLP 2024 (Istanbul, Turkey):</strong>
+                    Presented <em>"Exploiting Cross-Domain Knowledge of Large Language Models for Robust Healthcare
+                        Applications"</em>.
+                    In Review.
+                </li>
+                <li><strong>5th International Symposium on Bioinformatics (InSyB 2021, Istanbul, Turkey):</strong>
+                    Presented <em>"Accelerating Molecular Docking Using Machine Learning Methods"</em>.
+                    Later published in the <em>Journal of Molecular Informatics</em>.
+                </li>
+            </ul>
+        </div>
     </section>
+
 
     <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        📧 <a href="mailto:abdulsalambande@gmail.com">abdulsalambande@gmail.com</a> |
-        📍 Istanbul, Turkey
-      </p>
+        <h2>Contact</h2>
+        <p>
+            📍 Planet Earth &nbsp;&nbsp;
+        </p>
     </section>
-  </main>
+</main>
 
-<footer style="background-color: #2f2d2b; color: #f2e9de; padding: 2rem 1rem; font-size: 0.85rem; text-align: center; border-top: 8px solid #f2e9de; font-family: monospace;">
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem;">
-    <div style="display: flex; align-items: center; gap: 0.5rem;">
-      <div style="background-color: #f2e9de; color: #2f2d2b; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; font-weight: bold;">
-        BD
-      </div>
-    </div>
-    <div>&copy;2025 BandeLab. All Rights Reserved.</div>
-    <div style="display: flex; gap: 1rem;">
-    </div>
-  </div>
+
+<footer>
+    <div class="footer-logo">BD</div>
+    &copy;2025 BandeLab. All Rights Reserved.
 </footer>
-
 </body>
-
 </html>

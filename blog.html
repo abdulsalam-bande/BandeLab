@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>YouTube Playlists – BandeLab</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet"/>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            margin: 0;
+            padding: 0;
+            color: #2F2D2BFF;
+            line-height: 1.8;
+            font-size: 1.25rem;
+            background-color: #f7f3ee;
+            position: relative;
+            z-index: 0;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            background-repeat: repeat;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+
+        header {
+            background: #f7f3ee;
+            color: #1b1b1b;
+            padding: 0.6rem 1.2rem;
+            text-align: center;
+            border-bottom: 5px solid #1b210d;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: #333;
+            margin: 0 1.2rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d64b2c;
+        }
+
+
+        main {
+            padding: 4rem 1rem;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 2.0rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .card-row {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 900px;
+            background: #f7f3ee;
+            padding: 2rem 2rem 1rem 2rem;
+            border-radius: 15px;
+            border: 2px solid #2f2d2b;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #1b1b1b;
+        }
+
+        .card p {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        li a {
+            color: #388e3c;
+            font-weight: 500;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #2f2d2b;
+            color: #f2e9de;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.95rem;
+            border-top: 8px solid #f2e9de;
+            font-family: monospace;
+        }
+
+        .footer-logo {
+            background-color: #f2e9de;
+            color: #2f2d2b;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+    </style>
+</head>
+<body>
+
+  <header>
+    <h1>BandeLab</h1>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="youtube.html">YouTube</a>
+      <a href="berry.html">Mobile Application (Berry)</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Blog</h1>
+    <div class="card-row">
+      <div class="card">
+        <h3>Coming Soon</h3>
+        <p>
+          Great things take time — I’m working on insightful blog posts that dive into machine learning, app development, health tech, and more.
+          Stay tuned for updates and stories from behind the scenes at BandeLab.
+        </p>
+        <p>
+          In the meantime, feel free to explore other sections of the site.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">BD</div>
+    &copy;2025 BandeLab. All Rights Reserved.
+  </footer>
+
+</body>
+
+</html>
