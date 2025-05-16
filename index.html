@@ -2,30 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>About – BandeLab</title>
+
+    <!-- Normalize CSS for consistent rendering across browsers -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
           rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet"/>
+
     <style>
-        * {
+        /* Minimal CSS Reset */
+        html, body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        html {
+            font-size: 16px;
         }
 
         body {
             font-family: 'IBM Plex Mono', monospace;
-            margin: 0;
-            padding: 0;
             color: #2F2D2BFF;
             line-height: 1.8;
             font-size: 1rem;
             position: relative;
             z-index: 0;
-            background-color: #f7f3ee; /* creamy, light paper tone */
+            background-color: #f7f3ee;
             background-repeat: repeat;
             background-size: auto;
+            zoom: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-
 
         header {
             background: #f7f3ee;
@@ -37,7 +57,6 @@
 
         header h1 {
             font-size: 2.5rem;
-            margin: 0;
         }
 
         nav {
@@ -104,11 +123,6 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
         }
 
-        ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-        }
-
         footer {
             background-color: #2f2d2b;
             color: #f2e9de;
@@ -173,23 +187,20 @@
     <section id="about">
         <h2>Abdulsalam Bande</h2>
         <p>
-            My research background is in applying Machine Learning (ML) to
-            healthcare and bioinformatics. I'm passionate about contributing to the journey of revolutionising
-            healthcare
-            access through ML. The recent breakthroughs in Natural Language Processing—especially generative models—have
+            My research background is in applying Machine Learning (ML) to healthcare and bioinformatics.
+            I'm passionate about contributing to the journey of revolutionising healthcare access through ML.
+            The recent breakthroughs in Natural Language Processing—especially generative models—have
             shown immense potential to accelerate drug discovery and design.
 
-            Alongside my research, I work as a <strong>Software Developer at SOCRadar</strong>, where I develop
-            intelligent
-            systems in the field of cybersecurity to tackle real-world threats. I'm also optimistic about the future
-            intersection of Reinforcement Learning and Quantum Computing and the opportunities it could unlock.
+            Alongside my research, I work as a <strong>Software Developer at SOCRadar</strong>,
+            where I develop intelligent systems in the field of cybersecurity to tackle real-world threats.
+            I'm also optimistic about the future intersection of Reinforcement Learning and Quantum Computing
+            and the opportunities it could unlock.
         </p>
-        <a href="https://drive.google.com/file/d/1cCD4qCeIcoW6vcOhdDP8HW3MshFIcaDJ/view?usp=share_link" target="_blank"
-           class="scholar-link">View Resume</a>
-        <br>
-        <a href="https://scholar.google.com/citations?user=OlrA3O8AAAAJ&hl=en&authuser=1" target="_blank"
-           class="scholar-link">View Google Scholar Profile</a>
-
+        <a href="https://drive.google.com/file/d/1cCD4qCeIcoW6vcOhdDP8HW3MshFIcaDJ/view?usp=share_link"
+           target="_blank" class="scholar-link">View Resume</a><br>
+        <a href="https://scholar.google.com/citations?user=OlrA3O8AAAAJ&hl=en&authuser=1"
+           target="_blank" class="scholar-link">View Google Scholar Profile</a>
     </section>
 
     <section id="research">
@@ -215,19 +226,15 @@
         </div>
     </section>
 
-
     <section id="projects">
         <div class="card-wide">
             <h2>Projects</h2>
             <ul>
                 <li><strong>Berry:</strong> Mobile app that provides personalized AI health recommendations in
-                    low-resource regions.
-                </li>
-                <li><strong>YouTube Channel:</strong> <a href="youtube.html">mlwithpytorch</a> — Tutorials on PyTorch
-                    neural network modules.
-                </li>
-                <li><strong>Depth Estimation Research:</strong> PyTorch implementation of depth map prediction models.
-                </li>
+                    low-resource regions.</li>
+                <li><strong>YouTube Channel:</strong> <a href="youtube.html">mlwithpytorch</a> —
+                    Tutorials on PyTorch neural network modules.</li>
+                <li><strong>Depth Estimation Research:</strong> PyTorch implementation of depth map prediction models.</li>
             </ul>
         </div>
     </section>
@@ -240,35 +247,30 @@
                     Bande, A. & Baday, S. (2024). <em>Accelerating molecular docking using machine learning methods</em>.
                     <br>
                     Published in <em>Journal of Molecular Informatics</em>.
-                    <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1002/minf.202300167" target="_blank">View
-                        Publication</a>
+                    <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1002/minf.202300167" target="_blank">View Publication</a>
                 </li>
                 <li>
-                    Bande, A. & Baday, S. (2024). <em>Exploiting Cross-Domain Knowledge of Large Language Models for
-                    Robust Applications</em>. <br>Presented at Eurasia NLP 2024. In Review.
+                    Bande, A. & Baday, S. (2024). <em>Exploiting Cross-Domain Knowledge of Large Language Models for Robust Applications</em>.
+                    <br>Presented at Eurasia NLP 2024. In Review.
                 </li>
                 <li>
-                    Bande, A. & Baday, S. (2024). <em>Leveraging LLMs to Bridge Healthcare Gaps in Underdeveloped
-                    Countries</em>. <br>Best Paper Presenter, ICHSM 2024. In Review.
+                    Bande, A. & Baday, S. (2024). <em>Leveraging LLMs to Bridge Healthcare Gaps in Underdeveloped Countries</em>.
+                    <br>Best Paper Presenter, ICHSM 2024. In Review.
                 </li>
             </ul>
         </div>
     </section>
 
-
     <section id="conferences">
         <div class="card-wide">
             <h2>Conferences & Talks</h2>
             <ul>
-                <li><strong>7th International Conference on Healthcare Service Management (ICHSM 2024, Istanbul –
-                    Online):</strong>
-                    Presented <em>"Leveraging Large Language Models to Bridge Healthcare Gaps in Underdeveloped
-                        Countries"</em>.
+                <li><strong>7th International Conference on Healthcare Service Management (ICHSM 2024, Istanbul – Online):</strong>
+                    Presented <em>"Leveraging Large Language Models to Bridge Healthcare Gaps in Underdeveloped Countries"</em>.
                     Awarded Best Paper Presenter.
                 </li>
                 <li><strong>Eurasia NLP 2024 (Istanbul, Turkey):</strong>
-                    Presented <em>"Exploiting Cross-Domain Knowledge of Large Language Models for Robust Healthcare
-                        Applications"</em>.
+                    Presented <em>"Exploiting Cross-Domain Knowledge of Large Language Models for Robust Healthcare Applications"</em>.
                     In Review.
                 </li>
                 <li><strong>5th International Symposium on Bioinformatics (InSyB 2021, Istanbul, Turkey):</strong>
@@ -279,15 +281,11 @@
         </div>
     </section>
 
-
     <section id="contact">
         <h2>Contact</h2>
-        <p>
-            📍 Planet Earth &nbsp;&nbsp;
-        </p>
+        <p>📍 Planet Earth &nbsp;&nbsp;</p>
     </section>
 </main>
-
 
 <footer>
     <div class="footer-logo">BD</div>
