@@ -1,10 +1,10 @@
-Transformer Decoder Layer
+Transformer Layers : nn.TransformerDecoderLayer
 nn.TransformerDecoderLayer - Overview : https://youtu.be/sjRM5aStRwI
 torch.nn.TransformerDecoderLayer - Part 2 - Embedding, First Multi-Head attention and Normalization : https://youtu.be/Kl0Z65zuoB0
 torch.nn.TransformerDecoderLayer - Part 3 -Multi-Head attention and Normalization : https://youtu.be/OKlGLOq-RJ0
 torch.nn.TransformerDecoderLayer - Part 4 - Multiple Linear Layers and Normalization : https://youtu.be/VAEN0Ug1GDo
 
-Transformer Encoder Layer
+Transformer Layers : nn.TransformerEncoderLayer
 torch.nn.TransformerEncoderLayer - Part 0 - Module Overview : https://youtu.be/oCWFyt2kWLg
 torch.nn.TransformerEncoderLayer - Part 1 - Transformer Embedding and Position Encoding Layer : https://youtu.be/aSx2uAytLFY
 torch.nn.TransformerEncoderLayer - Part 2 - Transformer Self Attention Layer : https://youtu.be/inucENbg8tw
@@ -38,3 +38,40 @@ Reinforcement Learning: Markov Reward Process and Value Functions : https://yout
 Reinforcement Learning: The Bellman Equation : https://youtu.be/0iqhEm7Ge50
 Reinforcement Learning: Markov Decision Processes (MDPs) and Policies : https://youtu.be/Nwlwh3DxpQk
 Reinforcement Learning: Optimal Policies and Optimal Value Functions : https://youtu.be/8oJfo-gfuVo
+Reinforcement Learning: Different Types of Environments and Policies : https://youtu.be/hl6cDP21u7w
+Reinforcement Learning: Bellman Optimality Equation and the Q-function :https://youtu.be/lfkDspYSpOA
+Reinforcement Learning: Policy Iteration : https://youtu.be/QoI96rAcF_E
+Reinforcement Learning: Value Iteration : https://youtu.be/N6g5vUBlhXs
+Reinforcement Learning: Exploration vs Exploitation in Decision-Making : https://youtu.be/XppywGzhaXE
+
+Linear Layers
+torch.nn.Linear Module explained : https://youtu.be/QpyXyenmtTA
+
+Recurrent Layers
+torch.nn.RNN Module explained : https://youtu.be/4p9SXDSwxqA
+
+Dropout Layers
+torch.nn.Dropout explained : https://youtu.be/Jjapw_aB6RQ
+
+Others
+Types of Attention in NLP and Transformer Multi-Head Attention Explained : https://youtu.be/NbfGt-MsAcI
+Transformer Positional Embeddings With A Numerical Example : https://youtu.be/-jze8IC-hI0
+
+Convolution Layers
+torch.nn.Conv2d Module Explained : https://youtu.be/Osx4gfa2e5A
+torch.nn.ConvTranspose2d Explained : https://youtu.be/BgT7tBYEjqE
+
+Non-linear Activations (weighted sum, nonlinearity)
+Self Attention with torch.nn.MultiheadAttention Module : https://youtu.be/_iDanMWVj98
+
+Distance Functions
+torch.nn.CosineSimilarity explained and announcement! : https://youtu.be/F2NphXh5uJ4
+
+Backpropagation Explained
+Pytorch Backpropagation With Example 01 - Forward-propagation : https://youtu.be/Li9sG9U5rsk
+Pytorch Backpropagation With Example 02 - Backpropagation : https://youtu.be/A1LyT8HdTaY
+Pytorch Backpropagation with Example 03 - Gradient Descent : https://youtu.be/DtmrnsctV3E
+
+Sparse Layers
+torch.nn.Embedding - How embedding weights are updated in Backpropagation : https://youtu.be/nqwr08Eu2E4
+

@@ -1,0 +1,7 @@
+Blog tile: Ai dev Amsterdam 2025
+Time stamp: 17-09-2025
+Picture name: dev.jpg
+Blog file name: ai_dev.txt
+Keywords: Quantum computing in AI, Open-source AI models, AI standards, Machine learning operations (MLOps), Pretraining challenges, Generative AI research, Data quality in AI
+
+--

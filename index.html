@@ -1,304 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>About – BandeLab</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
-          rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet"/>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            /* your existing styles */
-            font-family: 'IBM Plex Mono', monospace;
-            margin: 0;
-            padding: 0;
-            color: #2F2D2BFF;
-            line-height: 1.8;
-            font-size: 1rem;
-            position: relative;
-            z-index: 0;
-            background-color: #f7f3ee;
-            background-repeat: repeat;
-            background-size: auto;;
-        }
-
-        @media screen and (min-width: 768px) {
-            body {
-                zoom: 75%;
-            }
-        }
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About – BandeLab</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; }
 
 
-        header {
-            background: #f7f3ee;
-            color: #1b1b1b;
-            padding: 0.6rem 1.2rem;
-            text-align: center;
-            border-bottom: 5px solid #1b210d;
-        }
+    /* ---------- Base look & feel ---------- */
+    body{
+      font-family:'IBM Plex Mono', monospace;
+      margin:0; padding:0;
+      color:#2F2D2BFF;
+      line-height:1.8; font-size:1rem;
+      background-color:#f7f3ee;
+    }
+    @media (min-width:768px){ body{ zoom:70%; } }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
+    header{
+      background:#f7f3ee; color:#1b1b1b;
+      padding:.6rem 1.2rem; text-align:center;
+      border-bottom:5px solid #1b210d;
+      max-width:1100px; margin:auto;
+    }
+    header h1{ font-size:2.5rem; margin:0; }
+    nav{ margin-top:1rem; }
+    nav a{
+      color:#333; margin:0 1.2rem; text-decoration:none;
+      font-weight:500; font-size:1.1rem; transition:color .3s ease;
+    }
+    nav a:hover{ color:#d64b2c; }
 
-        nav {
-            margin-top: 1rem;
-        }
+    main{ padding:4rem 1rem; max-width:1100px; margin:auto; }
+    section{ margin-bottom:3rem; }
+    h2{ font-size:2.2rem; margin:0 0 1rem; }
 
-        nav a {
-            color: #333;
-            margin: 0 1.2rem;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
+    .card, .card-wide{
+      background:#f7f3ee; padding:2rem; border-radius:15px;
+      border:2px solid #2f2d2b;
+      box-shadow:0 8px 16px rgba(0,0,0,.07);
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+    .card:hover, .card-wide:hover{ transform:scale(1.02); box-shadow:0 10px 20px rgba(0,0,0,.12); }
 
-        nav a:hover {
-            color: #d64b2c;
-        }
+    a{ color:#388e3c; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
 
-        main {
-            padding: 4rem 1rem;
-            max-width: 1100px;
-            margin: auto;
-        }
+/* ===== Footer (compact, single-line) ===== */
+footer{
+  background:#2f2d2b; color:#f2e9de;
+  border-top:8px solid #f2e9de;
+  font-family:monospace;
+}
+footer .footer-inner{
+  max-width:1100px; margin:0 auto;
+  padding:.6rem 1rem;              /* compact height */
+  display:flex; align-items:center; justify-content:center;
+  gap:.6rem; line-height:1; text-align:center;
+}
+.footer-logo{
+  background:#f2e9de; color:#2f2d2b; border-radius:50%;
+  width:28px; height:28px;          /* smaller circle */
+  display:flex; justify-content:center; align-items:center;
+  font-weight:bold; font-size:.85rem; flex:0 0 auto;
+  margin:0;                         /* remove previous bottom margin */
+}
 
-        section {
-            margin-bottom: 3rem;
-        }
+    /* ---------- Badges / tags ---------- */
+    .ambassador-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: #d64b2c;
+      color: #fff;
+      font-weight: 600;
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      margin-left: .8rem;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .ambassador-badge:hover { transform: scale(1.05); box-shadow: 0 4px 10px rgba(0,0,0,0.2); text-decoration: none; }
+    .ambassador-badge img { height: 20px; width: auto; display: block; }
 
-        h2 {
-            font-size: 2.4rem;
-            margin-bottom: 1rem;
-        }
+    .tag-link{
+      display:inline-block; padding:.25rem .6rem; border:1px solid #2f2d2b;
+      border-radius:999px; background:#fff6; font-size:.85rem; margin:.2rem .3rem .2rem 0;
+      color:#2f2d2b; text-decoration:none; transition:background .2s,color .2s;
+    }
+    .tag-link:hover{ background:#2f2d2b; color:#fff; text-decoration:none; }
 
-        .card-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
+    .logo{
+      background:#f2e9de; color:#2f2d2b; border-radius:50%;
+      width:42px; height:42px; display:flex; justify-content:center; align-items:center;
+      font-weight:bold; font-size:1.1rem;
+    }
+    .badge{ display:inline-block; font-size:.78rem; color:#fff; background:#2f2d2b; padding:.15rem .5rem; border-radius:6px; vertical-align:middle; }
 
-        .card,
-        .card-wide {
-            background: #f7f3ee;
-            padding: 2rem;
-            border-radius: 15px;
-            border: 2px solid #2f2d2b;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.07);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    /* statuses */
+    .status{ display:inline-block; font-size:.78rem; padding:.15rem .5rem; border-radius:999px; border:1px solid #2f2d2b; background:#fff; color:#2f2d2b; margin-left:.4rem; }
+    .status.published{ background:#e7f7e8; border-color:#2d6a2e; color:#1e4c20; }
+    .status.preprint{ background:#fff6e5; border-color:#8a5800; color:#5a3a00; }
+    .status.award{ background:#fbe7ea; border-color:#9b1c31; color:#6d1222; }
 
-        .card {
-            flex: 1;
-            min-width: 300px;
-        }
+    /* ---------- Research card (unchanged) ---------- */
+    .card--research h3{ display:flex; align-items:center; gap:.6rem; margin:0 0 .6rem; }
+    .card-sub{ color:#555; font-size:.95rem; margin:.2rem 0 1rem; }
+    .chips{ display:flex; flex-wrap:wrap; gap:.35rem; margin:.4rem 0 1rem; }
+    .q{ border:2px dashed #2f2d2b; border-radius:12px; padding:.75rem 1rem; background:#fff3; }
+    .q + .q{ margin-top:.8rem; }
+    .q > summary{ cursor:pointer; font-weight:600; list-style:none; }
+    .q > summary::-webkit-details-marker{ display:none; }
+    .q > summary .caret{
+      display:inline-block; transform:rotate(0deg); transition:transform .2s ease; margin-right:.4rem;
+    }
+    .q[open] > summary .caret{ transform:rotate(90deg); }
+    .q .meta{ display:flex; gap:.4rem; align-items:center; margin-left:.4rem; }
+    .q .body{ margin:.6rem 0 .2rem 1.3rem; color:#444; font-size:.95rem; }
 
-        .card-wide {
-            width: 100%;
-            margin-top: 2rem;
-        }
+    /* ---------- Slideshow (shared base styles) ---------- */
+    .slideshow-container { position: relative; width: 100%; max-width: 520px; margin: 0; border-radius: 15px; overflow: hidden; border: 2px solid #2f2d2b; box-shadow: 0 8px 16px rgba(0,0,0,.1); background: #f7f3ee; }
+    .mySlides { display: none; }
+    .mySlides img { width: 100%; height: auto; border-radius: 15px; aspect-ratio: 4 / 3; object-fit: cover; display:block; }
+    .prev, .next { cursor: pointer; position: absolute; top: 50%; padding: .6rem .8rem; color: #fff; font-weight: bold; font-size: 1.1rem; border-radius: 6px; user-select: none; background: rgba(0,0,0,0.35); transform: translateY(-50%); }
+    .next { right: .5rem; }
+    .prev { left: .5rem; }
+    .prev:hover, .next:hover { background: rgba(0,0,0,0.6); }
+    .dots { text-align:center; margin-top:.5rem; }
+    .dot { cursor: pointer; height: 9px; width: 9px; margin: 0 3px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color .3s ease; }
+    .active, .dot:hover { background-color: #d64b2c; }
+    .fade { animation: fade .8s; }
+    @keyframes fade { from {opacity:.4} to {opacity:1} }
 
-        .card:hover,
-        .card-wide:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-        }
+    /* ---------- Conferences card: neat split + right-side gallery ---------- */
+    .conferences-card .conf-section-title{ font-size: 1.15rem; letter-spacing:.02em; margin: 1.2rem 0 .8rem; display:flex; align-items:center; gap:.5rem; }
+    .conferences-card .conf-section-title .pill{ font-size:.8rem; padding:.15rem .5rem; border-radius:999px; border:1px solid #2f2d2b; background:#fff; color:#2f2d2b; }
+    .conf-divider{ border:none; border-top:2px dashed #2f2d2b; margin:1.4rem 0; }
 
-        ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-        }
+    .conf-row{ display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap; }
+    .conf-info{ flex:1 1 360px; min-width:280px; }
+    .conf-gallery{ flex:0 0 480px; max-width:520px; width:100%; }
 
-        footer {
-            background-color: #2f2d2b;
-            color: #f2e9de;
-            text-align: center;
-            padding: 2rem 1rem;
-            font-size: 0.95rem;
-            border-top: 8px solid #f2e9de;
-            font-family: monospace;
-        }
+    /* Top nav: no underline on hover */
+    nav a { text-decoration: none; }
+    nav a:hover, nav a:focus { color: #d64b2c; text-decoration: none; }
+    header nav a:hover { text-decoration: none !important; }
 
-        .footer-logo {
-            background-color: #f2e9de;
-            color: #2f2d2b;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-
-        a {
-            color: #388e3c;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .scholar-link {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: #388e3c;
-            color: #f7f3ee;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .scholar-link:hover {
-            background-color: #2d6f30;
-            text-decoration: none;
-        }
-    </style>
+    /* Completed-only gallery height override */
+    #completed-gallery .mySlides img{ height: 340px; aspect-ratio: auto; object-fit: cover; }
+    @media (max-width: 900px){ .conf-row{ flex-direction:column; } .conf-gallery{ max-width:100%; } #completed-gallery .mySlides img{ height: 260px; } }
+  </style>
 </head>
-
 <body>
 <header>
-    <h1>BandeLab</h1>
-    <nav>
-        <a href="index.html">About</a>
-        <a href="youtube.html">YouTube</a>
-        <a href="berry.html">Mobile Application (Berry)</a>
-        <a href="blog.html">Blog</a>
-    </nav>
+  <h1>BandeLab</h1>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="youtube.html">YouTube</a>
+    <a href="berry.html">Mobile Application (Berry)</a>
+    <a href="blog.html">Blog</a>
+  </nav>
 </header>
 
 <main>
-    <section id="about">
-        <h2>Abdulsalam Bande</h2>
-        <p>
-            My research background is in applying Machine Learning (ML) to
-            healthcare and bioinformatics. I'm passionate about contributing to the journey of revolutionising
-            healthcare
-            access through ML. The recent breakthroughs in Natural Language Processing—especially generative models—have
-            shown immense potential to accelerate drug discovery and design.
+  <!-- ABOUT -->
+  <section id="about" class="card">
+    <div style="display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;">
+      <div class="logo">AB</div>
+      <h2 style="margin:0; display:flex; align-items:center; flex-wrap:wrap; gap:.6rem;">
+        Abdulsalam Bande
+        <a href="https://pytorch.org/programs/ambassadors/?ajs_aid=0a6169ce-b2ba-4613-97de-8d1e16bb5dda" target="_blank" rel="noopener" class="ambassador-badge">
+          <img src="pytorch_logo.png" alt="PyTorch Logo"> PyTorch Ambassador
+        </a>
+      </h2>
+    </div>
+    <div style="margin:.6rem 0 1rem;">
+      <a class="tag-link" href="https://drive.google.com/file/d/1cCD4qCeIcoW6vcOhdDP8HW3MshFIcaDJ/view?usp=share_link" target="_blank" rel="noopener">View Resume</a>
+      <a class="tag-link" href="https://scholar.google.com/citations?user=OlrA3O8AAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Google Scholar</a>
+    </div>
+    <p>
+        I’m a machine-learning researcher with 6+ years of experience across academia and industry. I’ve worked in
+        multiple domains, especially Natural Language Processing and Computer Vision.
+        My master’s focused on applying machine learning to design prospective molecules for new drugs.
+        At SOCRadar, I work as both a full-stack developer and an ML engineer. I build systems that classify large,
+        multilingual data streams and fine-tune open-source generative models to extract signal while preserving
+        customer privacy and reducing costs.
+        This work has helped prevent data leaks and reduce financial risk for hundreds of customers. I’m also excited
+        about the intersection of reinforcement learning and quantum computing.
+    </p>
+  </section>
 
-            Alongside my research, I work as a <strong>Software Developer at SOCRadar</strong>, where I develop
-            intelligent
-            systems in the field of cybersecurity to tackle real-world threats. I'm also optimistic about the future
-            intersection of Reinforcement Learning and Quantum Computing and the opportunities it could unlock.
-        </p>
-        <a href="https://drive.google.com/file/d/1cCD4qCeIcoW6vcOhdDP8HW3MshFIcaDJ/view?usp=share_link" target="_blank"
-           class="scholar-link">View Resume</a>
-        <br>
-        <a href="https://scholar.google.com/citations?user=OlrA3O8AAAAJ&hl=en&authuser=1" target="_blank"
-           class="scholar-link">View Google Scholar Profile</a>
-
-    </section>
-
-    <section id="research">
-        <div class="card-row">
-            <div class="card">
-                <h2>Core Research Questions</h2>
-                <ul>
-                    <li>How can LLMs assist in medical diagnosis and awareness?</li>
-                    <li>How can AI methods accelerate drug discovery?</li>
-                    <li>What design choices make AI effective in low-resource settings?</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h2>Research Interests</h2>
-                <ul>
-                    <li>Natural Language Processing</li>
-                    <li>Reinforcement Learning</li>
-                    <li>Machine Learning for Healthcare</li>
-                    <li>Bioinformatics & Drug Discovery</li>
-                    <li>Quantum Computing (Exploratory)</li>
-                </ul>
-            </div>
+  <!-- ========================================= -->
+  <!-- ✅ Publications & Presentations (merged) -->
+  <!-- (All peer‑reviewed papers + talks you delivered) -->
+  <!-- ========================================= -->
+  <section id="publications" class="card">
+    <h2>Publications & Presentations</h2>
+    <ul>
+      <li>
+        <strong>Journal of Molecular Informatics (2024)</strong> —
+        <em><a href="https://pubmed.ncbi.nlm.nih.gov/38850231/" target="_blank" rel="noopener">Accelerating Molecular Docking Using Machine Learning Methods</a></em>
+        <span class="status published">Published</span>
+        <div style="font-size:.95rem;color:#555;margin-top:.2rem;">
+          Also presented earlier at <strong>InSyB 2021 (Istanbul)</strong>.
         </div>
-    </section>
+      </li>
 
+      <li>
+        <strong>BioClina 2024 – International Conference on Biological & Clinical Studies (Istanbul, Oct 9–10, 2024)</strong> —
+        <em>Exploiting Cross-Domain Knowledge of Large Language Models for Robust Healthcare Applications</em>
+        <span class="status preprint">Preprint</span>
+        <a class="status award" href="https://drive.google.com/file/d/1Qo3CcmP6s314yBG5kFMmopxVgDdzrjxn/view" target="_blank" rel="noopener">Best Paper Presenter</a>
+      </li>
 
-    <section id="projects">
-        <div class="card-wide">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>Berry:</strong> Mobile app that provides personalized AI health recommendations in
-                    low-resource regions.
-                </li>
-                <li><strong>YouTube Channel:</strong> <a href="youtube.html">mlwithpytorch</a> — Tutorials on PyTorch
-                    neural network modules.
-                </li>
-                <li><strong>Depth Estimation Research:</strong> PyTorch implementation of depth map prediction models.
-                </li>
-            </ul>
+      <li>
+        <strong>ICHSM 2024 – 7th International Conference on Healthcare Service Management (Istanbul – Online)</strong> —
+        <em>Leveraging Large Language Models to Bridge Healthcare Gaps in Underdeveloped Countries</em>
+        <span class="status preprint">Preprint</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ========================================= -->
+  <!-- 🎟️ Conferences — Attended (no presentation) -->
+  <!-- Keep separate to avoid inflating contributions -->
+  <!-- ========================================= -->
+  <section id="conferences" class="card-wide conferences-card">
+    <h2>Conferences — Completed & Upcoming <span class="status" title="These are attendance only; no talk delivered">Attended</span></h2>
+
+    <!-- Completed -->
+    <div class="conf-section">
+      <div class="conf-section-title">
+        <strong>Completed</strong> <span class="pill">Attended</span>
+      </div>
+
+      <div class="conf-row">
+        <div class="conf-info">
+          <h3 style="margin:.2rem 0 .4rem;">AI + Dev Europe 2025 (Linux Foundation)</h3>
+          <div style="margin-bottom:.4rem; color:#555;">Attended — August 2025</div>
+          <p style="margin:.3rem 0 1rem;">
+            This conference focused on open-source AI in production—covering LLMOps, RAG, evaluation, safety/governance, and cloud-native training.
+            <a href="https://events.linuxfoundation.org/ai-dev-europe/" target="_blank" rel="noopener">Event details</a>
+          </p>
+          <ul style="margin-top:.6rem;">
+            <li>Event Keywords: Open Source AI, Generative AI, LLMs, Model Training & Inference, AI Agents, LLMOps/MLOps, Data Governance, Model Safety, Retrieval-Augmented Generation (RAG), Cloud-Native Infrastructure, Ethics & Regulation, Quantum Computing</li>
+            <li><a href="blog.html">Blog Post</a></li>
+          </ul>
         </div>
-    </section>
 
-    <section id="publications">
-        <div class="card-wide">
-            <h2>Publications</h2>
-            <ul>
-                <li>
-                    Bande, A. & Baday, S. (2024). <em>Accelerating molecular docking using machine learning methods</em>.
-                    <br>
-                    Published in <em>Journal of Molecular Informatics</em>.
-                    <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1002/minf.202300167" target="_blank">View
-                        Publication</a>
-                </li>
-                <li>
-                    Bande, A. & Baday, S. (2024). <em>Exploiting Cross-Domain Knowledge of Large Language Models for
-                    Robust Applications</em>. <br>Presented at Eurasia NLP 2024. In Review.
-                </li>
-                <li>
-                    Bande, A. & Baday, S. (2024). <em>Leveraging LLMs to Bridge Healthcare Gaps in Underdeveloped
-                    Countries</em>. <br>Best Paper Presenter, ICHSM 2024. In Review.
-                </li>
-            </ul>
+        <aside class="conf-gallery">
+          <div class="slideshow-container" id="completed-gallery"></div>
+          <div class="dots" id="completed-dots" aria-label="Gallery pagination"></div>
+        </aside>
+      </div>
+    </div>
+
+    <hr class="conf-divider"/>
+
+    <!-- Upcoming -->
+    <div class="conf-section">
+      <div class="conf-section-title">
+        <strong>Upcoming</strong> <span class="pill">October 2025</span>
+      </div>
+
+      <div class="conf-row">
+        <div class="conf-info">
+          <h3 style="margin:.2rem 0 .4rem;">PyTorch Conference 2025 (Linux Foundation)</h3>
+          <div style="margin-bottom:.4rem; color:#555;"><em>October 2025</em></div>
+          <p style="margin:.3rem 0 1rem;">
+            Looking forward to sessions on model scalability, ecosystem tools, and the latest in deep learning research.
+            <a href="https://events.linuxfoundation.org/pytorch-conference/?ajs_aid=0a6169ce-b2ba-4613-97de-8d1e16bb5dda" target="_blank" rel="noopener">Event details</a>
+          </p>
+          <ul style="margin-top:.6rem;">
+            <li>Targets: distributed training, quantization, AOT-Autograd updates.</li>
+            <li>People to meet: ecosystem maintainers, ambassadors, researchers.</li>
+          </ul>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
+  <!-- RESEARCH (unchanged from your file)
+  <section id="research" class="card card--research">
+    <h3><span class="logo" aria-hidden="true" style="width:34px;height:34px;font-size:.95rem;">RQ</span> Core Research Questions</h3>
+    <p class="card-sub">A quick look at the problems I’m actively thinking about and how I approach them.</p>
 
-    <section id="conferences">
-        <div class="card-wide">
-            <h2>Conferences & Talks</h2>
-            <ul>
-                <li><strong>7th International Conference on Healthcare Service Management (ICHSM 2024, Istanbul –
-                    Online):</strong>
-                    Presented <em>"Leveraging Large Language Models to Bridge Healthcare Gaps in Underdeveloped
-                        Countries"</em>.
-                    Awarded Best Paper Presenter.
-                </li>
-                <li><strong>Eurasia NLP 2024 (Istanbul, Turkey):</strong>
-                    Presented <em>"Exploiting Cross-Domain Knowledge of Large Language Models for Robust Healthcare
-                        Applications"</em>.
-                    In Review.
-                </li>
-                <li><strong>5th International Symposium on Bioinformatics (InSyB 2021, Istanbul, Turkey):</strong>
-                    Presented <em>"Accelerating Molecular Docking Using Machine Learning Methods"</em>.
-                    Later published in the <em>Journal of Molecular Informatics</em>.
-                </li>
-            </ul>
-        </div>
-    </section>
+    <div class="chips" aria-label="Topics">
+      <span class="badge">NLP</span>
+      <span class="badge">Healthcare AI</span>
+      <span class="badge">Low-resource ML</span>
+      <span class="badge">Drug Discovery</span>
+    </div>
 
+    <details class="q">
+      <summary><span class="caret">▶</span> How can we quantify and control training-data contamination, provenance, and memorization risk in LLMs without sacrificing utility?
+        <span class="meta"><span class="badge">Data Quality</span><span class="badge">Privacy</span><span class="badge">Provenance</span></span>
+      </summary>
+      <div class="body">
+        <ul>
+          <li><b>Why:</b> Legal/safety risks (regurgitation, PII, copyrighted text) and brittle generalization.</li>
+          <li><b>Approach:</b> Near-duplicate/contamination detection (MinHash/SimHash, n-gram overlap), lineage tracking, PII scrubbing with uncertainty, influence functions/Shapley/TracIn for data attribution, DP-SGD or confidence regularization.</li>
+          <li><b>Evaluation:</b> Regurgitation & membership-inference rates vs. utility (MMLU/BBH), calibration, factual attribution, shift robustness.</li>
+        </ul>
+      </div>
+    </details>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>
-            📍 Planet Earth &nbsp;&nbsp;
-        </p>
-    </section>
+    <details class="q">
+      <summary><span class="caret">▶</span> Can LLM-guided generative design with synthesizability & ADMET constraints measurably raise hit rates with minimal wet-lab iterations?
+        <span class="meta"><span class="badge">Molecular ML</span><span class="badge">Generative</span><span class="badge">Active Learning</span></span>
+      </summary>
+      <div class="body">
+        <ul>
+          <li><b>Why:</b> Wet-lab assays are expensive; we need higher enrichment per cycle.</li>
+          <li><b>Approach:</b> Graph/SMILES/SELFIES LLMs or diffusion models; multi-objective scoring (potency, ADMET, SA/SCScore); LLM-assisted retrosynthesis filters; active learning on uncertainty/diversity; closed-loop design–make–test.</li>
+          <li><b>Evaluation:</b> Top-k enrichment, synthetic feasibility, novelty/diversity, prospective in-vitro hit rate vs. baselines.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="caret">▶</span> How effective are cross-modal LLMs that jointly model proteins (sequence/structure) and ligands for affinity prediction and pocket-specific design?
+        <span class="meta"><span class="badge">Multimodal</span><span class="badge">Structure-Aware</span><span class="badge">Drug Design</span></span>
+      </summary>
+    </details>
+
+    <details class="q">
+      <summary><span class="caret">▶</span> How do we do reliable off-policy evaluation and policy improvement on observational healthcare logs with hidden confounding?
+        <span class="meta"><span class="badge">Offline RL</span><span class="badge">Causal</span><span class="badge">OPE</span></span>
+      </summary>
+    </details>
+
+    <details class="q">
+      <summary><span class="caret">▶</span> For small, structured datasets, do quantum-inspired feature maps (simulated classically) offer any accuracy or sample-efficiency gains over strong classical kernels—and when would real devices plausibly help?
+        <span class="meta"><span class="badge">QML</span><span class="badge">Light Start</span></span>
+      </summary>
+    </details>
+
+  </section>
+   -->
 </main>
 
-
 <footer>
+  <div class="footer-inner">
     <div class="footer-logo">BD</div>
-    &copy;2025 BandeLab. All Rights Reserved.
+    <span>&copy;2025 BandeLab. All Rights Reserved.</span>
+  </div>
 </footer>
+
+<!-- ---------- JS: Completed-only Gallery ---------- -->
+<script>
+  // ===== Completed Conference Gallery ONLY =====
+  const folder = "2024"; // <- change to your images folder (e.g., "2025/ai-dev-europe")
+  const galleryEl = document.getElementById("completed-gallery");
+  const dotsEl = document.getElementById("completed-dots");
+  let slideIndex = 1;
+  let autoTimer = null;
+
+  (async function buildCompletedGallery(){
+    if(!galleryEl) return;
+    let files = await tryReadManifest(`${folder}/_images.txt`);
+    if (!files.length) {
+      const probes = Array.from({length:50}, (_,i)=>`${i+1}.jpg`);
+      files = await probeExisting(probes);
+    }
+    if (!files.length) {
+      galleryEl.innerHTML = '<p style="text-align:center;color:#555;margin:.5rem 0;">No images found.</p>';
+      return;
+    }
+    files.forEach((name, i) => {
+      const slide = document.createElement("div");
+      slide.className = "mySlides fade";
+      const img = document.createElement("img");
+      img.src = name.includes("/") ? name : `${folder}/${name}`;
+      img.alt = `AI + Dev Europe 2025 – Image ${i+1}`;
+      slide.appendChild(img);
+      galleryEl.appendChild(slide);
+
+      const dot = document.createElement("span");
+      dot.className = "dot";
+      dot.addEventListener("click", ()=> currentSlide(i+1));
+      dotsEl.appendChild(dot);
+    });
+
+    const controls = document.createElement("div");
+    controls.innerHTML = `
+      <a class="prev" aria-label="Previous" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" aria-label="Next" onclick="plusSlides(1)">&#10095;</a>
+    `;
+    galleryEl.appendChild(controls);
+
+    showSlides(slideIndex);
+    startAuto();
+  })();
+
+  async function tryReadManifest(url){
+    try{
+      const res = await fetch(url, { cache: "no-store" });
+      if(!res.ok) return [];
+      const txt = await res.text();
+      return txt.split(/\r?\n/).map(s=>s.trim())
+        .filter(s=>s && !s.startsWith('#') && /\.jpe?g$/i.test(s));
+    }catch(e){ return []; }
+  }
+  async function probeExisting(names){
+    const checks = names.map(n => new Promise(resolve => {
+      const img = new Image();
+      img.onload = ()=> resolve(n);
+      img.onerror = ()=> resolve(null);
+      img.src = `${folder}/${n}?v=${Date.now()}`;
+    }));
+    const results = await Promise.all(checks);
+    return results.filter(Boolean);
+  }
+
+  function plusSlides(n){ stopAuto(); showSlides(slideIndex += n); startAuto(); }
+  function currentSlide(n){ stopAuto(); showSlides(slideIndex = n); startAuto(); }
+  function showSlides(n){
+    const slides = galleryEl ? galleryEl.getElementsByClassName("mySlides") : [];
+    const dots = dotsEl ? dotsEl.getElementsByClassName("dot") : [];
+    if (!slides.length) return;
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+    for (let i=0;i<slides.length;i++) slides[i].style.display = "none";
+    for (let i=0;i<dots.length;i++) dots[i].className = dots[i].className.replace(" active", "");
+    slides[slideIndex-1].style.display = "block";
+    if(dots[slideIndex-1]) dots[slideIndex-1].className += " active";
+  }
+  function startAuto(){ autoTimer = setInterval(()=> plusSlides(1), 4500); }
+  function stopAuto(){ if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+
+  // expose minimal handlers
+  window.plusSlides = plusSlides;
+  window.currentSlide = currentSlide;
+</script>
 </body>
 </html>
