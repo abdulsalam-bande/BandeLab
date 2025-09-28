@@ -362,7 +362,7 @@ footer .footer-inner{
 
   (async function buildCompletedGallery(){
     if(!galleryEl) return;
-    let files = await tryReadManifest(`${folder}/_images.txt`);
+    let files = await tryReadManifest(`${folder}/images.txt`);
     if (!files.length) {
       const probes = Array.from({length:50}, (_,i)=>`${i+1}.jpg`);
       files = await probeExisting(probes);
