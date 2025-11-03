@@ -8,7 +8,6 @@
   <style>
     * { box-sizing: border-box; }
 
-
     /* ---------- Base look & feel ---------- */
     body{
       font-family:'IBM Plex Mono', monospace;
@@ -150,9 +149,9 @@ footer .footer-inner{
     nav a:hover, nav a:focus { color: #d64b2c; text-decoration: none; }
     header nav a:hover { text-decoration: none !important; }
 
-    /* Completed-only gallery height override */
-    #completed-gallery .mySlides img{ height: 340px; aspect-ratio: auto; object-fit: cover; }
-    @media (max-width: 900px){ .conf-row{ flex-direction:column; } .conf-gallery{ max-width:100%; } #completed-gallery .mySlides img{ height: 260px; } }
+    /* Gallery height override (applies to all conference galleries) */
+    .conf-gallery .mySlides img{ height: 340px; aspect-ratio: auto; object-fit: cover; }
+    @media (max-width: 900px){ .conf-row{ flex-direction:column; } .conf-gallery{ max-width:100%; } .conf-gallery .mySlides img{ height: 260px; } }
   </style>
 </head>
 <body>
@@ -230,14 +229,31 @@ footer .footer-inner{
   <!-- Keep separate to avoid inflating contributions -->
   <!-- ========================================= -->
   <section id="conferences" class="card-wide conferences-card">
-    <h2>Conferences — Completed & Upcoming <span class="status" title="These are attendance only; no talk delivered">Attended</span></h2>
+    <h2>Conferences <span class="status" title="These are attendance only; no talk delivered">Attended</span></h2>
 
     <!-- Completed -->
     <div class="conf-section">
-      <div class="conf-section-title">
-        <strong>Completed</strong> <span class="pill">Attended</span>
+
+      <!-- PyTorch Conference 2025 -->
+            <div class="conf-row">
+        <div class="conf-info">
+          <h3 style="margin:.2rem 0 .4rem;">PyTorch Conference 2025 (Linux Foundation)</h3>
+          <div style="margin-bottom:.4rem; color:#555;">Attended — Oct 22–23, 2025 — San Francisco</div>
+          <ul style="margin-top:.6rem;">
+            <li>Topics covered: Reinforcement learning, LLM inference, model optimization, distributed training, quantization, edge deployment, open-source governance, and the future of AI infrastructure.</li>
+            <li>Community: ecosystem maintainers, ambassadors, researchers, and industry practitioners.</li>
+          </ul>
+        </div>
+
+        <aside class="conf-gallery">
+          <div class="slideshow-container" id="pytorch2025-gallery" data-folder="PyTorch2025"></div>
+          <div class="dots" id="pytorch2025-dots" aria-label="Gallery pagination"></div>
+        </aside>
       </div>
 
+      <hr class="conf-divider"/>
+
+      <!-- AI + Dev Europe 2025 -->
       <div class="conf-row">
         <div class="conf-info">
           <h3 style="margin:.2rem 0 .4rem;">AI + Dev Europe 2025 (Linux Foundation)</h3>
@@ -253,95 +269,14 @@ footer .footer-inner{
         </div>
 
         <aside class="conf-gallery">
-          <div class="slideshow-container" id="completed-gallery"></div>
-          <div class="dots" id="completed-dots" aria-label="Gallery pagination"></div>
+          <div class="slideshow-container" id="ai-dev-gallery" data-folder="AI_DEV"></div>
+          <div class="dots" id="ai-dev-dots" aria-label="Gallery pagination"></div>
         </aside>
       </div>
     </div>
 
-    <hr class="conf-divider"/>
-
-    <!-- Upcoming -->
-    <div class="conf-section">
-      <div class="conf-section-title">
-        <strong>Upcoming</strong> <span class="pill">October 2025</span>
-      </div>
-
-      <div class="conf-row">
-        <div class="conf-info">
-          <h3 style="margin:.2rem 0 .4rem;">PyTorch Conference 2025 (Linux Foundation)</h3>
-          <div style="margin-bottom:.4rem; color:#555;"><em>October 2025</em></div>
-          <p style="margin:.3rem 0 1rem;">
-            Looking forward to sessions on model scalability, ecosystem tools, and the latest in deep learning research.
-            <a href="https://events.linuxfoundation.org/pytorch-conference/?ajs_aid=0a6169ce-b2ba-4613-97de-8d1e16bb5dda" target="_blank" rel="noopener">Event details</a>
-          </p>
-          <ul style="margin-top:.6rem;">
-            <li>Targets: distributed training, quantization, AOT-Autograd updates.</li>
-            <li>People to meet: ecosystem maintainers, ambassadors, researchers.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <!-- (Removed the old "Upcoming" PyTorch card since it is now completed) -->
   </section>
-
-  <!-- RESEARCH (unchanged from your file)
-  <section id="research" class="card card--research">
-    <h3><span class="logo" aria-hidden="true" style="width:34px;height:34px;font-size:.95rem;">RQ</span> Core Research Questions</h3>
-    <p class="card-sub">A quick look at the problems I’m actively thinking about and how I approach them.</p>
-
-    <div class="chips" aria-label="Topics">
-      <span class="badge">NLP</span>
-      <span class="badge">Healthcare AI</span>
-      <span class="badge">Low-resource ML</span>
-      <span class="badge">Drug Discovery</span>
-    </div>
-
-    <details class="q">
-      <summary><span class="caret">▶</span> How can we quantify and control training-data contamination, provenance, and memorization risk in LLMs without sacrificing utility?
-        <span class="meta"><span class="badge">Data Quality</span><span class="badge">Privacy</span><span class="badge">Provenance</span></span>
-      </summary>
-      <div class="body">
-        <ul>
-          <li><b>Why:</b> Legal/safety risks (regurgitation, PII, copyrighted text) and brittle generalization.</li>
-          <li><b>Approach:</b> Near-duplicate/contamination detection (MinHash/SimHash, n-gram overlap), lineage tracking, PII scrubbing with uncertainty, influence functions/Shapley/TracIn for data attribution, DP-SGD or confidence regularization.</li>
-          <li><b>Evaluation:</b> Regurgitation & membership-inference rates vs. utility (MMLU/BBH), calibration, factual attribution, shift robustness.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="caret">▶</span> Can LLM-guided generative design with synthesizability & ADMET constraints measurably raise hit rates with minimal wet-lab iterations?
-        <span class="meta"><span class="badge">Molecular ML</span><span class="badge">Generative</span><span class="badge">Active Learning</span></span>
-      </summary>
-      <div class="body">
-        <ul>
-          <li><b>Why:</b> Wet-lab assays are expensive; we need higher enrichment per cycle.</li>
-          <li><b>Approach:</b> Graph/SMILES/SELFIES LLMs or diffusion models; multi-objective scoring (potency, ADMET, SA/SCScore); LLM-assisted retrosynthesis filters; active learning on uncertainty/diversity; closed-loop design–make–test.</li>
-          <li><b>Evaluation:</b> Top-k enrichment, synthetic feasibility, novelty/diversity, prospective in-vitro hit rate vs. baselines.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="q">
-      <summary><span class="caret">▶</span> How effective are cross-modal LLMs that jointly model proteins (sequence/structure) and ligands for affinity prediction and pocket-specific design?
-        <span class="meta"><span class="badge">Multimodal</span><span class="badge">Structure-Aware</span><span class="badge">Drug Design</span></span>
-      </summary>
-    </details>
-
-    <details class="q">
-      <summary><span class="caret">▶</span> How do we do reliable off-policy evaluation and policy improvement on observational healthcare logs with hidden confounding?
-        <span class="meta"><span class="badge">Offline RL</span><span class="badge">Causal</span><span class="badge">OPE</span></span>
-      </summary>
-    </details>
-
-    <details class="q">
-      <summary><span class="caret">▶</span> For small, structured datasets, do quantum-inspired feature maps (simulated classically) offer any accuracy or sample-efficiency gains over strong classical kernels—and when would real devices plausibly help?
-        <span class="meta"><span class="badge">QML</span><span class="badge">Light Start</span></span>
-      </summary>
-    </details>
-
-  </section>
-   -->
 </main>
 
 <footer>
@@ -351,91 +286,103 @@ footer .footer-inner{
   </div>
 </footer>
 
-<!-- ---------- JS: Completed-only Gallery ---------- -->
+<!-- ---------- JS: Multi-gallery Builder (AI Dev + PyTorch 2025) ---------- -->
 <script>
-  // ===== Completed Conference Gallery ONLY =====
-  const folder = "2024"; // <- change to your images folder (e.g., "2025/ai-dev-europe")
-  const galleryEl = document.getElementById("completed-gallery");
-  const dotsEl = document.getElementById("completed-dots");
-  let slideIndex = 1;
-  let autoTimer = null;
-
-  (async function buildCompletedGallery(){
+  // Generic gallery builder supporting multiple conference galleries.
+  function buildGallery({containerId, dotsId, folder, altPrefix}){
+    const galleryEl = document.getElementById(containerId);
+    const dotsEl = document.getElementById(dotsId);
     if(!galleryEl) return;
-    let files = await tryReadManifest(`${folder}/images.txt`);
-    if (!files.length) {
-      const probes = Array.from({length:50}, (_,i)=>`${i+1}.jpg`);
-      files = await probeExisting(probes);
+
+    let slideIndex = 1;
+    let autoTimer = null;
+
+    (async function init(){
+      let files = await tryReadManifest(`${folder}/images.txt`);
+      if (!files.length) {
+        // Probe up to 50 images named 1.jpg..50.jpg
+        const probes = Array.from({length:50}, (_,i)=>`${i+1}.jpg`);
+        files = await probeExisting(folder, probes);
+      }
+      if (!files.length) {
+        galleryEl.innerHTML = '<p style="text-align:center;color:#555;margin:.5rem 0;">No images found.</p>';
+        return;
+      }
+
+      files.forEach((name, i) => {
+        const slide = document.createElement("div");
+        slide.className = "mySlides fade";
+        const img = document.createElement("img");
+        img.src = name.includes("/") ? name : `${folder}/${name}`;
+        img.alt = `${altPrefix} – Image ${i+1}`;
+        slide.appendChild(img);
+        galleryEl.appendChild(slide);
+
+        const dot = document.createElement("span");
+        dot.className = "dot";
+        dot.addEventListener("click", ()=> currentSlide(i+1));
+        dotsEl.appendChild(dot);
+      });
+
+      const prev = document.createElement("a");
+      prev.className = "prev";
+      prev.setAttribute("aria-label", "Previous");
+      prev.textContent = "\u276E"; // ❮
+      prev.addEventListener("click", ()=> plusSlides(-1));
+
+      const next = document.createElement("a");
+      next.className = "next";
+      next.setAttribute("aria-label", "Next");
+      next.textContent = "\u276F"; // ❯
+      next.addEventListener("click", ()=> plusSlides(1));
+
+      galleryEl.appendChild(prev);
+      galleryEl.appendChild(next);
+
+      showSlides(slideIndex);
+      startAuto();
+    })();
+
+    async function tryReadManifest(url){
+      try{
+        const res = await fetch(url, { cache: "no-store" });
+        if(!res.ok) return [];
+        const txt = await res.text();
+        return txt.split(/\r?\n/).map(s=>s.trim())
+          .filter(s=>s && !s.startsWith('#') && /\.jpe?g$/i.test(s));
+      }catch(e){ return []; }
     }
-    if (!files.length) {
-      galleryEl.innerHTML = '<p style="text-align:center;color:#555;margin:.5rem 0;">No images found.</p>';
-      return;
+    async function probeExisting(folder, names){
+      const checks = names.map(n => new Promise(resolve => {
+        const img = new Image();
+        img.onload = ()=> resolve(n);
+        img.onerror = ()=> resolve(null);
+        img.src = `${folder}/${n}?v=${Date.now()}`;
+      }));
+      const results = await Promise.all(checks);
+      return results.filter(Boolean);
     }
-    files.forEach((name, i) => {
-      const slide = document.createElement("div");
-      slide.className = "mySlides fade";
-      const img = document.createElement("img");
-      img.src = name.includes("/") ? name : `${folder}/${name}`;
-      img.alt = `AI + Dev Europe 2025 – Image ${i+1}`;
-      slide.appendChild(img);
-      galleryEl.appendChild(slide);
 
-      const dot = document.createElement("span");
-      dot.className = "dot";
-      dot.addEventListener("click", ()=> currentSlide(i+1));
-      dotsEl.appendChild(dot);
-    });
-
-    const controls = document.createElement("div");
-    controls.innerHTML = `
-      <a class="prev" aria-label="Previous" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" aria-label="Next" onclick="plusSlides(1)">&#10095;</a>
-    `;
-    galleryEl.appendChild(controls);
-
-    showSlides(slideIndex);
-    startAuto();
-  })();
-
-  async function tryReadManifest(url){
-    try{
-      const res = await fetch(url, { cache: "no-store" });
-      if(!res.ok) return [];
-      const txt = await res.text();
-      return txt.split(/\r?\n/).map(s=>s.trim())
-        .filter(s=>s && !s.startsWith('#') && /\.jpe?g$/i.test(s));
-    }catch(e){ return []; }
-  }
-  async function probeExisting(names){
-    const checks = names.map(n => new Promise(resolve => {
-      const img = new Image();
-      img.onload = ()=> resolve(n);
-      img.onerror = ()=> resolve(null);
-      img.src = `${folder}/${n}?v=${Date.now()}`;
-    }));
-    const results = await Promise.all(checks);
-    return results.filter(Boolean);
+    function plusSlides(n){ stopAuto(); showSlides(slideIndex += n); startAuto(); }
+    function currentSlide(n){ stopAuto(); showSlides(slideIndex = n); startAuto(); }
+    function showSlides(n){
+      const slides = galleryEl ? galleryEl.getElementsByClassName("mySlides") : [];
+      const dots = dotsEl ? dotsEl.getElementsByClassName("dot") : [];
+      if (!slides.length) return;
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+      for (let i=0;i<slides.length;i++) slides[i].style.display = "none";
+      for (let i=0;i<dots.length;i++) dots[i].className = dots[i].className.replace(" active", "");
+      slides[slideIndex-1].style.display = "block";
+      if(dots[slideIndex-1]) dots[slideIndex-1].className += " active";
+    }
+    function startAuto(){ autoTimer = setInterval(()=> plusSlides(1), 4500); }
+    function stopAuto(){ if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
   }
 
-  function plusSlides(n){ stopAuto(); showSlides(slideIndex += n); startAuto(); }
-  function currentSlide(n){ stopAuto(); showSlides(slideIndex = n); startAuto(); }
-  function showSlides(n){
-    const slides = galleryEl ? galleryEl.getElementsByClassName("mySlides") : [];
-    const dots = dotsEl ? dotsEl.getElementsByClassName("dot") : [];
-    if (!slides.length) return;
-    if (n > slides.length) { slideIndex = 1; }
-    if (n < 1) { slideIndex = slides.length; }
-    for (let i=0;i<slides.length;i++) slides[i].style.display = "none";
-    for (let i=0;i<dots.length;i++) dots[i].className = dots[i].className.replace(" active", "");
-    slides[slideIndex-1].style.display = "block";
-    if(dots[slideIndex-1]) dots[slideIndex-1].className += " active";
-  }
-  function startAuto(){ autoTimer = setInterval(()=> plusSlides(1), 4500); }
-  function stopAuto(){ if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
-
-  // expose minimal handlers
-  window.plusSlides = plusSlides;
-  window.currentSlide = currentSlide;
+  // Build both galleries
+  buildGallery({ containerId:"pytorch2025-gallery", dotsId:"pytorch2025-dots", folder:"PyTorch2025", altPrefix:"PyTorch Conference 2025" });
+  buildGallery({ containerId:"ai-dev-gallery", dotsId:"ai-dev-dots", folder:"AI_DEV", altPrefix:"AI + Dev Europe 2025" });
 </script>
 </body>
 </html>
