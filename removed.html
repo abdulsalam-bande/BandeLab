@@ -1,0 +1,58 @@
+  <!-- RESEARCH (unchanged from your file)
+  <section id="research" class="card card--research">
+    <h3><span class="logo" aria-hidden="true" style="width:34px;height:34px;font-size:.95rem;">RQ</span> Core Research Questions</h3>
+    <p class="card-sub">A quick look at the problems I’m actively thinking about and how I approach them.</p>
+
+    <div class="chips" aria-label="Topics">
+      <span class="badge">NLP</span>
+      <span class="badge">Healthcare AI</span>
+      <span class="badge">Low-resource ML</span>
+      <span class="badge">Drug Discovery</span>
+    </div>
+
+    <details class="q">
+      <summary><span class="caret">▶</span> How can we quantify and control training-data contamination, provenance, and memorization risk in LLMs without sacrificing utility?
+        <span class="meta"><span class="badge">Data Quality</span><span class="badge">Privacy</span><span class="badge">Provenance</span></span>
+      </summary>
+      <div class="body">
+        <ul>
+          <li><b>Why:</b> Legal/safety risks (regurgitation, PII, copyrighted text) and brittle generalization.</li>
+          <li><b>Approach:</b> Near-duplicate/contamination detection (MinHash/SimHash, n-gram overlap), lineage tracking, PII scrubbing with uncertainty, influence functions/Shapley/TracIn for data attribution, DP-SGD or confidence regularization.</li>
+          <li><b>Evaluation:</b> Regurgitation & membership-inference rates vs. utility (MMLU/BBH), calibration, factual attribution, shift robustness.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="caret">▶</span> Can LLM-guided generative design with synthesizability & ADMET constraints measurably raise hit rates with minimal wet-lab iterations?
+        <span class="meta"><span class="badge">Molecular ML</span><span class="badge">Generative</span><span class="badge">Active Learning</span></span>
+      </summary>
+      <div class="body">
+        <ul>
+          <li><b>Why:</b> Wet-lab assays are expensive; we need higher enrichment per cycle.</li>
+          <li><b>Approach:</b> Graph/SMILES/SELFIES LLMs or diffusion models; multi-objective scoring (potency, ADMET, SA/SCScore); LLM-assisted retrosynthesis filters; active learning on uncertainty/diversity; closed-loop design–make–test.</li>
+          <li><b>Evaluation:</b> Top-k enrichment, synthetic feasibility, novelty/diversity, prospective in-vitro hit rate vs. baselines.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="q">
+      <summary><span class="caret">▶</span> How effective are cross-modal LLMs that jointly model proteins (sequence/structure) and ligands for affinity prediction and pocket-specific design?
+        <span class="meta"><span class="badge">Multimodal</span><span class="badge">Structure-Aware</span><span class="badge">Drug Design</span></span>
+      </summary>
+    </details>
+
+    <details class="q">
+      <summary><span class="caret">▶</span> How do we do reliable off-policy evaluation and policy improvement on observational healthcare logs with hidden confounding?
+        <span class="meta"><span class="badge">Offline RL</span><span class="badge">Causal</span><span class="badge">OPE</span></span>
+      </summary>
+    </details>
+
+    <details class="q">
+      <summary><span class="caret">▶</span> For small, structured datasets, do quantum-inspired feature maps (simulated classically) offer any accuracy or sample-efficiency gains over strong classical kernels—and when would real devices plausibly help?
+        <span class="meta"><span class="badge">QML</span><span class="badge">Light Start</span></span>
+      </summary>
+    </details>
+
+  </section>
+   -->
