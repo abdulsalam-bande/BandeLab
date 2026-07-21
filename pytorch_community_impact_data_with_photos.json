@@ -1,0 +1,65 @@
+{
+  "page": {
+    "title": "PyTorch Ambassador Activities",
+    "subtitle": "Completed, scheduled, proposed, and ongoing community activities",
+    "last_updated": "2026-07-13"
+  },
+  "events": [
+    {
+      "id": "event-001",
+      "title": "Start Your AI Career with PyTorch",
+      "date": "2026-07-17",
+      "status": "completed",
+      "format": "Online",
+      "location": "Nigeria",
+      "host_organization": "YALI Network",
+      "registration_count": null,
+      "attendance_count": 114,
+      "impact_summary": "An introductory workshop designed to help beginners start their machine-learning journey with PyTorch and understand practical AI career pathways.",
+      "photos_dir": "event_photos/start-your-ai-career-with-pytorch-yali",
+      "links": {}
+    },
+    {
+      "id": "event-002",
+      "title": "Build a Naija RAG for Local Context with PyTorch",
+      "date": "2026-07-18",
+      "status": "scheduled",
+      "format": "Online",
+      "location": "Nigeria",
+      "host_organization": "PyTorch Community Meetup",
+      "registration_count": null,
+      "attendance_count": null,
+      "impact_summary": "Participants build a Retrieval-Augmented Generation (RAG) system using Nigerian local knowledge while learning practical PyTorch workflows.",
+      "photos_dir": "event_photos/build-a-naija-rag",
+      "links": {}
+    },
+    {
+      "id": "event-003",
+      "title": "Solving Local Challenges with PyTorch",
+      "date": "2026-07-25",
+      "status": "scheduled",
+      "format": "In person",
+      "location": "Nigeria",
+      "host_organization": "YALI Network",
+      "registration_count": null,
+      "attendance_count": null,
+      "impact_summary": "Demonstrating how PyTorch can be applied to real-world Nigerian challenges across education, healthcare, agriculture, finance, and other sectors.",
+      "photos_dir": "event_photos/solving-local-challenges-with-pytorch",
+      "links": {}
+    },
+    {
+      "id": "event-004",
+      "title": "Start Your AI Career with PyTorch",
+      "date": "2026-07-26",
+      "status": "scheduled",
+      "format": "Online",
+      "location": "Nigeria",
+      "host_organization": "RIMA Computer Academy",
+      "registration_count": null,
+      "attendance_count": null,
+      "impact_summary": "An introductory PyTorch workshop focused on helping students begin building and training neural networks using open-source tools.",
+      "photos_dir": "event_photos/start-your-ai-career-with-pytorch-rima",
+      "links": {}
+    }
+  ]
+}
