@@ -237,7 +237,15 @@
       display: flex;
       gap: .5rem;
       flex-wrap: wrap;
-      margin: 0 .35rem 1rem;
+      margin: 0 .35rem .8rem;
+    }
+
+    .activity-context {
+      margin: 0 .35rem 1.2rem;
+      max-width: 1050px;
+      color: #555;
+      font-size: .92rem;
+      line-height: 1.65;
     }
 
     .activity-table-wrap {
@@ -251,7 +259,7 @@
 
     .activity-table {
       width: 100%;
-      min-width: 920px;
+      min-width: 900px;
       border-collapse: collapse;
     }
 
@@ -271,27 +279,26 @@
 
     .activity-table th:nth-child(1),
     .activity-table td:nth-child(1) {
-      min-width: 230px;
+      min-width: 240px;
+      width: 23%;
     }
 
     .activity-table th:nth-child(2),
     .activity-table td:nth-child(2) {
       min-width: 120px;
+      width: 12%;
     }
 
     .activity-table th:nth-child(3),
     .activity-table td:nth-child(3) {
-      min-width: 180px;
+      min-width: 190px;
+      width: 18%;
     }
 
     .activity-table th:nth-child(4),
     .activity-table td:nth-child(4) {
-      min-width: 120px;
-    }
-
-    .activity-table th:nth-child(5),
-    .activity-table td:nth-child(5) {
-      min-width: 360px;
+      min-width: 440px;
+      width: 47%;
     }
 
     .activity-table tbody tr:last-child td {
@@ -313,7 +320,9 @@
       font-size: .84rem;
     }
 
-    .impact-cell { min-width: 330px; }
+    .participation-impact-cell {
+      min-width: 440px;
+    }
 
     .evidence-button {
       margin-top: .7rem;
@@ -750,6 +759,11 @@
         margin-top: .25rem;
       }
 
+      .activity-context {
+        font-size: .86rem;
+        line-height: 1.55;
+      }
+
       .conf-gallery .mySlides img { height: 220px; }
 
       .evidence-gallery {
@@ -814,7 +828,7 @@
   </section>
 
   <section id="pytorch-activities" class="activities-section">
-    <h2>PyTorch Ambassador Activities</h2>
+    <h2>PyTorch Ambassador Community Activities</h2>
 
     <div class="activity-legend" aria-label="Activity status legend">
       <span class="status completed">Completed</span>
@@ -822,6 +836,12 @@
       <span class="status proposed">Proposed</span>
       <span class="status ongoing">Ongoing</span>
     </div>
+
+    <p class="activity-context">
+      These activities help close access gaps in Nigeria by bringing practical PyTorch education,
+      mentorship, and project-based learning to students and developers who may have limited exposure
+      to advanced AI training and global open-source communities.
+    </p>
 
     <div id="activity-loading" class="activity-loading">Loading activities…</div>
     <div id="activity-error" class="activity-error" hidden></div>
@@ -834,8 +854,7 @@
             <th>Activity / Status</th>
             <th>Date</th>
             <th>Location / Format</th>
-            <th>Attendance</th>
-            <th>Impact</th>
+            <th>Participation &amp; Impact</th>
           </tr>
           </thead>
           <tbody id="activities-body"></tbody>
@@ -977,11 +996,6 @@
     }).format(date);
   }
 
-  function activityFormatNumber(value) {
-    if (value === null || value === undefined || value === "") return "—";
-    return Number(value).toLocaleString("en-US");
-  }
-
   function activityEvidenceLinks(links = {}) {
     return Object.entries(links)
       .filter(([, url]) => Boolean(url))
@@ -1042,6 +1056,7 @@
     const content = document.getElementById("activity-content");
     const body = document.getElementById("activities-body");
     const pagination = document.getElementById("activity-pagination");
+    const lastUpdated = document.getElementById("activities-last-updated");
 
     if (!loading || !error || !content || !body || !pagination) return;
 
@@ -1054,15 +1069,34 @@
 
       const data = await response.json();
       const events = data.events || [];
-      const order = { completed: 0, ongoing: 1, scheduled: 2, proposed: 3 };
+const order = {
+  ongoing: 0,
+  scheduled: 1,
+  proposed: 2,
+  completed: 3
+};
 
-      const sorted = [...events].sort((a, b) => {
-        const statusDifference =
-          (order[a.status] ?? 99) - (order[b.status] ?? 99);
+const sorted = [...events].sort((a, b) => {
+  const statusA = order[a.status] ?? 99;
+  const statusB = order[b.status] ?? 99;
 
-        if (statusDifference !== 0) return statusDifference;
-        return String(b.date || "").localeCompare(String(a.date || ""));
-      });
+  if (statusA !== statusB) {
+    return statusA - statusB;
+  }
+
+  const dateA = String(a.date || "");
+  const dateB = String(b.date || "");
+
+  // Upcoming activities: nearest date first
+  if (a.status === "ongoing" ||
+      a.status === "scheduled" ||
+      a.status === "proposed") {
+    return dateA.localeCompare(dateB);
+  }
+
+  // Completed activities: newest first
+  return dateB.localeCompare(dateA);
+});
 
       const pageSize = 4;
       let currentPage = 1;
@@ -1070,7 +1104,7 @@
       function renderPage() {
         if (!sorted.length) {
           body.innerHTML =
-            '<tr><td colspan="5" class="activity-muted">No activities have been added yet.</td></tr>';
+            '<tr><td colspan="4" class="activity-muted">No activities have been added yet.</td></tr>';
           pagination.innerHTML = "";
           return;
         }
@@ -1084,13 +1118,6 @@
         const pageEvents = sorted.slice(start, start + pageSize);
 
         body.innerHTML = pageEvents.map(event => {
-          const attendance =
-            event.status === "completed"
-              ? activityFormatNumber(event.attendance_count)
-              : event.registration_count
-                ? `${activityFormatNumber(event.registration_count)} registered`
-                : "—";
-
           const location = [event.location, event.format]
             .filter(Boolean)
             .map(activityEscapeHtml)
@@ -1101,6 +1128,10 @@
             : "";
 
           const links = activityEvidenceLinks(event.links || {});
+          const participationImpact =
+            event.participation_impact ||
+            event.impact_summary ||
+            "—";
 
           return `
             <tr>
@@ -1113,9 +1144,8 @@
               </td>
               <td>${activityEscapeHtml(activityFormatDate(event.date))}</td>
               <td>${location || "—"}</td>
-              <td>${activityEscapeHtml(attendance)}</td>
-              <td class="impact-cell">
-                <div>${activityEscapeHtml(event.impact_summary || "—")}</div>
+              <td class="participation-impact-cell">
+                <div>${activityEscapeHtml(participationImpact)}</div>
 
                 ${event.photos_dir ? `
                   <button
@@ -1172,7 +1202,9 @@
 
       renderPage();
 
-
+      if (lastUpdated && data.page?.last_updated) {
+        lastUpdated.textContent = `Last updated: ${activityFormatDate(data.page.last_updated)}`;
+      }
 
       loading.hidden = true;
       content.hidden = false;
