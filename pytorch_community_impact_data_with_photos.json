@@ -2,7 +2,7 @@
   "page": {
     "title": "PyTorch Ambassador Community Activities",
     "subtitle": "Completed and upcoming PyTorch community workshops, webinars, and hackathons",
-    "last_updated": "2026-08-01"
+    "last_updated": "2026-08-18"
   },
   "events": [
     {
@@ -60,15 +60,54 @@
     },
     {
       "id": "event-005",
-      "title": "Building Practical AI Applications with PyTorch",
-      "date": "2026-08-15",
+      "title": "Getting Started with AI Research Using PyTorch",
+      "date": "2026-08-26",
+      "status": "scheduled",
+      "format": "In person",
+      "location": "Sokoto Polytechnic, Sokoto, Nigeria",
+      "host_organization": "Sokoto Polytechnic",
+      "attendance_count": null,
+      "participation_impact": "Scheduled beginner-friendly session introducing students to using PyTorch for simple AI research experiments, including preparing data, training models, evaluating results, and interpreting basic findings.",
+      "photos_dir": "event_photos/ai-research-with-pytorch-sokoto-polytechnic",
+      "links": {}
+    },
+    {
+      "id": "event-006",
+      "title": "Build Your First AI Application with PyTorch",
+      "date": "2026-09-07",
+      "status": "scheduled",
+      "format": "In person",
+      "location": "Nigeria",
+      "host_organization": "YALI Network",
+      "attendance_count": null,
+      "participation_impact": "Scheduled practical session helping beginners understand tensors, pretrained models, and the basic steps involved in turning an AI idea into a simple working PyTorch application.",
+      "photos_dir": "event_photos/first-ai-application-with-pytorch-yali",
+      "links": {}
+    },
+    {
+      "id": "event-007",
+      "title": "From Tensors to Neural Networks with PyTorch",
+      "date": "2026-09-15",
       "status": "scheduled",
       "format": "In person",
       "location": "Usmanu Danfodiyo University, Sokoto, Nigeria",
       "host_organization": "Usmanu Danfodiyo University, Sokoto",
       "attendance_count": null,
-      "participation_impact": "Scheduled hands-on session introducing students to tensors, pretrained models, and simple interfaces for building practical PyTorch applications addressing local challenges.",
-      "photos_dir": "event_photos/practical-ai-with-pytorch-udus",
+      "participation_impact": "Scheduled hands-on introduction to PyTorch covering tensors, datasets, simple neural networks, model training, and evaluation through beginner-friendly examples.",
+      "photos_dir": "event_photos/tensors-to-neural-networks-udus",
+      "links": {}
+    },
+    {
+      "id": "event-008",
+      "title": "From Research Question to PyTorch Experiment",
+      "date": "2026-09-21",
+      "status": "scheduled",
+      "format": "In person",
+      "location": "Sokoto State University, Sokoto, Nigeria",
+      "host_organization": "Sokoto State University",
+      "attendance_count": null,
+      "participation_impact": "Scheduled research-oriented session showing students how to turn a simple research question into a reproducible PyTorch experiment, including dataset preparation, model training, evaluation, and reporting results.",
+      "photos_dir": "event_photos/research-question-to-pytorch-experiment-ssu",
       "links": {}
     }
   ]

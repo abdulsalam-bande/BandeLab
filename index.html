@@ -1146,7 +1146,7 @@ const sorted = [...events].sort((a, b) => {
               <td class="participation-impact-cell">
                 <div>${activityEscapeHtml(participationImpact)}</div>
 
-                ${event.photos_dir ? `
+                ${event.status === "completed" && event.photos_dir ? `
                   <button
                     type="button"
                     class="evidence-button"
