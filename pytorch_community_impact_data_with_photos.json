@@ -61,7 +61,7 @@
     {
       "id": "event-005",
       "title": "Getting Started with AI Research Using PyTorch",
-      "date": "2026-08-26",
+      "date": "2026-09-10",
       "status": "scheduled",
       "format": "In person",
       "location": "Sokoto Polytechnic, Sokoto, Nigeria",
@@ -74,7 +74,7 @@
     {
       "id": "event-006",
       "title": "Build Your First AI Application with PyTorch",
-      "date": "2026-09-07",
+      "date": "2026-09-14",
       "status": "scheduled",
       "format": "In person",
       "location": "Nigeria",
@@ -87,7 +87,7 @@
     {
       "id": "event-007",
       "title": "From Tensors to Neural Networks with PyTorch",
-      "date": "2026-09-15",
+      "date": "2026-09-20",
       "status": "scheduled",
       "format": "In person",
       "location": "Usmanu Danfodiyo University, Sokoto, Nigeria",
@@ -98,17 +98,17 @@
       "links": {}
     },
     {
-      "id": "event-008",
-      "title": "From Research Question to PyTorch Experiment",
-      "date": "2026-09-21",
-      "status": "scheduled",
-      "format": "In person",
-      "location": "Sokoto State University, Sokoto, Nigeria",
-      "host_organization": "Sokoto State University",
-      "attendance_count": null,
-      "participation_impact": "Scheduled research-oriented session showing students how to turn a simple research question into a reproducible PyTorch experiment, including dataset preparation, model training, evaluation, and reporting results.",
-      "photos_dir": "event_photos/research-question-to-pytorch-experiment-ssu",
-      "links": {}
+  "id": "event-008",
+  "title": "From Research Question to PyTorch Experiment",
+  "date": "2026-09-01",
+  "status": "completed",
+  "format": "In person",
+  "location": "Sokoto State University, Sokoto, Nigeria",
+  "host_organization": "Sokoto State University",
+  "attendance_count": null,
+  "participation_impact": "Completed research-oriented session showing students how to turn a research question into a reproducible PyTorch experiment, including dataset preparation, model training, evaluation, and reporting results.",
+  "photos_dir": "event_photos/research-question-to-pytorch-experiment-ssu",
+  "links": {}
     }
   ]
 }
